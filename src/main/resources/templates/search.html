@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+		body {font-family: Arial, Helvetica, sans-serif;}
+		* {box-sizing: border-box;}
+		
+		input[type=text], select, textarea {
+		  width: 30%;
+		  padding: 10px;
+		  border: 1px solid #ccc;
+		  border-radius: 4px;
+		  box-sizing: border-box;
+		  margin-top: 6px;
+		  margin-bottom: 16px;
+		  resize: vertical;
+		}
+		
+		table, th, td {
+			table-layout: fixed;
+		  width: 100%;
+		  
+		  border: 1px solid black;
+		  padding: 5px;
+		  border-collapse: collapse;
+		}
+		
+		.container {
+		  border-radius: 5px;
+		  background-color: #f2f2f2;
+		  padding: 20px;
+		}
+		
+		.center {
+		  	text-align: center;
+		  	
+		}	
+		.a {
+		  	text-transform: uppercase;
+		}
+	</style>
+</head>
+<body>
+	<div class="center" >
+	<br>
+		<br>
+		<img src="https://v.fastcdn.co/u/c787f3ba/54936372-0-GHTK-logo.png" alt="Logo" width="450" height="120">
+		<h2 style="text-transform: uppercase;"> Tra cứu thông tin tuyển sinh</h2>
+		 <form method="post" th:action="@{/search}" >
+	        <label for="hoten">Họ tên&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+		    <input type="text" id="hoten" name="hoten" value="">
+			<br>
+		    <label for="ma">Mã học sinh</label>
+		    <input type="text" id="ma" name="ma" value="">
+			    <br>	 
+		
+		    <input class="primary" type="submit" value="Tìm kiếm">
+   	 	</form>
+	<p style="font-weight: bold ; color:red" th:text="${msg}"></p>
+	</div>
+	<table 
+	       id="studentTable">
+	    <tr style="background-color: Aquamarine">
+	        <th>STT</th>
+	        <th>Trường học</th>
+	        <th>Quận/Huyện</th>
+	        <th>Mã học sinh</th>
+	        <th>Lớp</th>
+	        <th>Họ tên</th>
+	        <th>Ngày sinh</th>
+	        <th>Giới tính</th>
+	        <th>Nơi sinh</th>
+	        <th>Dân tộc</th>
+	        <th>Hộ khẩu</th>
+	        <th>Điện thoại</th>
+	        <th>Tổng điểm 5 năm</th>
+	        <th>Điểm ưu tiên</th>
+	        <th>Điểm sơ tuyển vòng 1</th>
+	        <th>Ghi chú</th>
+	    </tr>
+	   
+	
+	    <tbody th:each="s, istart : ${studentList}">
+		    <td th:text="${istart.index + 1}"></td>
+		    <td th:text="${s.truonghoc}"></td>
+		    <td th:text="${s.quanhuyen}"></td>
+		    <td th:text="${s.ma}"></td>
+		    <td th:text="${s.lop}"></td>
+		    <td th:text="${s.hoten}"></td>
+		    <td th:text="${s.ngaysinh}"></td>
+		    <td th:text="${s.gioitinh}"></td>
+		    <td th:text="${s.noisinh}"></td>
+		    <td th:text="${s.dantoc}"></td>
+		    <td th:text="${s.hokhau}"></td>
+		    <td th:text="${s.dienthoai}"></td>
+		    <td th:text="${s.tong5diem}"></td>
+		    <td th:text="${s.diemUT}"></td>
+		   	<td th:text="${s.diem}"></td>
+		    <td th:text="${s.note}"></td>
+	    </tbody>
+	</table>
+</body>
+</html>
+
+
+
+	
+	
+	
+	

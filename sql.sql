@@ -1,0 +1,23 @@
+CREATE TABLE student (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    truonghoc VARCHAR(30),
+    quanhuyen VARCHAR(20),
+    ma VARCHAR(15),
+    lop VARCHAR(10),
+    hoten VARCHAR(20),
+    ngaysinh VARCHAR(15),
+    gioitinh VARCHAR(10),
+    noisinh VARCHAR(20),
+    dantoc VARCHAR(10),
+    hokhau VARCHAR(50),
+    dienthoai VARCHAR(15),
+    diem1 DOUBLE(10),
+    diem2 DOUBLE(10),
+    diem3 DOUBLE(10),
+    diem4 DOUBLE(10),
+    diem5 DOUBLE(10),
+    tong5diem DOUBLE(10),
+    diemut DOUBLE(10),
+    diem DOUBLE(10),
+    note VARCHAR(30)
+);

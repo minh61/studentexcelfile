@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Demo spring</title>
+	<style>
+		.center {
+		  	text-align: center;
+		  	
+		}	
+		.a {
+		  	text-transform: uppercase;
+		}
+	</style>
+</head>
+<body>
+	
+	<div class="center" >
+	<br>
+		<br>
+		<img src="https://v.fastcdn.co/u/c787f3ba/54936372-0-GHTK-logo.png" alt="Logo" width="450" height="120">
+		<h2 style="text-transform: uppercase;"> Tra cứu thông tin tuyển sinh</h2><br>
+		<form method="post" th:action=@{/upload} enctype="multipart/form-data">
+	        <input type="file" name="file">
+	        <input type="submit" value="Import">
+	    </form>
+	    <p th:text="${msg}"></p>
+	</div>
+	
+</body>
+</html>
